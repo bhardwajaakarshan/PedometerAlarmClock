@@ -7,19 +7,43 @@
 //
 
 import UIKit
+import CoreMotion
 
 class ViewController: UIViewController {
-
+    
+    var currSteps = 0
+    var pedEvent = CMPedometer()
+    var date = NSDate()
+    let lengthFormatter = NSLengthFormatter()
+    
+    @IBOutlet weak var stepDisplay: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        stepDisplay.text! = String(currSteps)
+        print("LOL")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func resetSteps(sender: UIButton) {
 
+        if(CMPedometer.isStepCountingAvailable()){
+            print("WE HAVE PERMISSION")
+            
+            self.pedEvent.startPedometerUpdatesFromDate(NSDate(), withHandler: { data, error in
+                print(data!.numberOfSteps)
+            })
 
+            self.pedEvent.queryPedometerDataFromDate(date, toDate: NSDate(), withHandler: { data, error in
+                print(data!.numberOfSteps)
+            })
+        }
+        
+        
+    }
+    
 }
-
