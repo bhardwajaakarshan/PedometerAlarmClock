@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import CoreMotion
 
 class ViewController: UIViewController {
@@ -23,22 +24,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         stepDisplay.text! = String(totalSteps - currSteps)
         registerLocal(self)
+        
+        let _ = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(ViewController.startCounting), userInfo: nil, repeats: true)
         date = NSDate()
         if(CMPedometer.isStepCountingAvailable()){
             
             pedEvent.startPedometerUpdatesFromDate(NSDate(), withHandler: { data, error in
-                print(data!.numberOfSteps)
+                //print(data!.numberOfSteps)
                 self.currSteps = data!.numberOfSteps.integerValue
-                self.stepDisplay.text! = String(self.totalSteps - self.currSteps)
+                //self.stepDisplay.text! = String(self.totalSteps - self.currSteps)
                 
             })
         }
     }
-    
-    @IBAction func trigger(sender: UIButton) {
-        startCounting()
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,19 +55,21 @@ class ViewController: UIViewController {
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
-    func resetSteps(sender: AnyObject) {
+    func resetSteps() {
         // localdata is used to access the information outside of the closure
         if(CMPedometer.isStepCountingAvailable()){
             var localdata:CMPedometerData!
             self.pedEvent.queryPedometerDataFromDate(date, toDate: NSDate(), withHandler: { data, error in
-                print("\(data!.numberOfSteps) ASDF1")
+//                print("\(data!.numberOfSteps) ASDF1")
                 localdata = data!
             })
             sleep(1)
             // since a second thread is created sleep is used to make sure the local value is not dereferenced before the app returns the number of steps.
             print("\(localdata.numberOfSteps)")
             currSteps = (localdata!.numberOfSteps).integerValue
-            stepDisplay.text! = String(localdata!.numberOfSteps.integerValue)
+            //dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            //})
+            //print("\(currSteps) ASDF1")
         } else {
             print("No permission to use health data.")
         }
@@ -78,14 +78,8 @@ class ViewController: UIViewController {
     }
     
     func startCounting () {
-        var currdate = NSDate()
-        while (NSDate().timeIntervalSinceDate(currdate) < 2) {}
-        currdate = NSDate()
-        resetSteps(self)
+        resetSteps()
         stepDisplay.text! = String(totalSteps - currSteps)
-        if (totalSteps - currSteps > 0) {
-            startCounting()
-        }
     }
     
 }
