@@ -16,6 +16,8 @@
 		181F36581D4591C700DA5174 /* Pedometer_Alarm_ClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F36571D4591C700DA5174 /* Pedometer_Alarm_ClockUITests.swift */; };
 		181F36661D46E1F300DA5174 /* AlarmCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F36651D46E1F300DA5174 /* AlarmCreationViewController.swift */; };
 		181F36681D46E48F00DA5174 /* AlarmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F36671D46E48F00DA5174 /* AlarmObject.swift */; };
+		181F366A1D46EC4400DA5174 /* alarmTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F36691D46EC4400DA5174 /* alarmTableView.swift */; };
+		181F366C1D46F04C00DA5174 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F366B1D46F04C00DA5174 /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		181F36591D4591C700DA5174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		181F36651D46E1F300DA5174 /* AlarmCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCreationViewController.swift; sourceTree = "<group>"; };
 		181F36671D46E48F00DA5174 /* AlarmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmObject.swift; sourceTree = "<group>"; };
+		181F36691D46EC4400DA5174 /* alarmTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmTableView.swift; sourceTree = "<group>"; };
+		181F366B1D46F04C00DA5174 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				181F36431D4591C700DA5174 /* Info.plist */,
 				181F36651D46E1F300DA5174 /* AlarmCreationViewController.swift */,
 				181F36671D46E48F00DA5174 /* AlarmObject.swift */,
+				181F36691D46EC4400DA5174 /* alarmTableView.swift */,
+				181F366B1D46F04C00DA5174 /* Cell.swift */,
 			);
 			path = Pedometer_Alarm_Clock;
 			sourceTree = "<group>";
@@ -263,10 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181F366A1D46EC4400DA5174 /* alarmTableView.swift in Sources */,
 				181F36681D46E48F00DA5174 /* AlarmObject.swift in Sources */,
 				181F363A1D4591C700DA5174 /* ViewController.swift in Sources */,
 				181F36661D46E1F300DA5174 /* AlarmCreationViewController.swift in Sources */,
 				181F36381D4591C700DA5174 /* AppDelegate.swift in Sources */,
+				181F366C1D46F04C00DA5174 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

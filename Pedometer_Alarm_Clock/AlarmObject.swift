@@ -10,4 +10,12 @@ import Foundation
 
 class AlarmObject {
     
+    var alarms: [NSDate] = [NSDate()]
+    
+    static let sharedInstance = AlarmObject()
+    
+    func getAlarms() -> [NSDate] {
+        return alarms
+    }
+    
 }

@@ -30,6 +30,8 @@ class AlarmCreationViewController: UIViewController, UIPickerViewDelegate {
         alert.message = "\(selectedValue)"
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
+        AlarmObject.sharedInstance.alarms.append(selectedValue)
+        print(AlarmObject.sharedInstance.alarms)
         //addNewAlarm(selectedValue)
     }
     
