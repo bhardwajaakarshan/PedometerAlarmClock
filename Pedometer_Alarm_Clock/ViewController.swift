@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     var currSteps = 0
     let totalSteps = 100
+    var didUserWalkEnoughSteps = false
     var pedEvent = CMPedometer()
     var date = NSDate()
     let lengthFormatter = NSLengthFormatter()
@@ -80,6 +81,7 @@ class ViewController: UIViewController {
     func startCounting () {
         resetSteps()
         stepDisplay.text! = String(totalSteps - currSteps)
+        didUserWalkEnoughSteps = (totalSteps - currSteps > 0 ? false : true)
     }
     
 }

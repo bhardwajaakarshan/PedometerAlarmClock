@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PnE-mE-WZS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="fTr-bB-5X7">
+            <objects>
+                <tabBarController id="PnE-mE-WZS" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ZlR-xe-Qqt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="1n6-uP-cVn"/>
+                        <segue destination="ine-Dk-vjj" kind="relationship" relationship="viewControllers" id="13a-Jc-4y5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L9C-kl-ThH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-605" y="239"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pedometer_Alarm_Clock" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,6 +73,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="iQl-uN-snx" secondAttribute="trailing" constant="-20" id="puV-9W-Akr"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="WuN-lU-Zgj"/>
                     <connections>
                         <outlet property="stepDisplay" destination="3pT-Ne-x48" id="lFJ-PJ-2xh"/>
                     </connections>
@@ -62,6 +81,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="245" y="239"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Twq-yz-09i">
+            <objects>
+                <viewController id="ine-Dk-vjj" customClass="AlarmCreationViewController" customModule="Pedometer_Alarm_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Hq-nH-eak"/>
+                        <viewControllerLayoutGuide type="bottom" id="42d-Ep-Qtu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qbw-Wp-cLx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rW2-8o-kwc">
+                                <rect key="frame" x="180" y="28" width="241" height="118"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="ADD"/>
+                                <connections>
+                                    <action selector="addAlarm:" destination="ine-Dk-vjj" eventType="touchUpInside" id="ftg-Cy-t8q"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="a1J-uC-O90">
+                                <rect key="frame" x="0.0" y="222" width="600" height="329"/>
+                                <date key="date" timeIntervalSinceReferenceDate="491184437.919258">
+                                    <!--2016-07-26 00:07:17 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a1J-uC-O90" firstAttribute="centerX" secondItem="rW2-8o-kwc" secondAttribute="centerX" id="Jxg-qH-LXp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a1J-uC-O90" secondAttribute="trailing" constant="-20" id="LqL-KX-dzs"/>
+                            <constraint firstItem="rW2-8o-kwc" firstAttribute="top" secondItem="7Hq-nH-eak" secondAttribute="bottom" constant="8" id="MRB-Ti-Pae"/>
+                            <constraint firstItem="a1J-uC-O90" firstAttribute="leading" secondItem="Qbw-Wp-cLx" secondAttribute="leadingMargin" constant="-20" id="rHz-iO-FA0"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="gkp-0n-oRc"/>
+                    <connections>
+                        <outlet property="datePicker" destination="a1J-uC-O90" id="3KX-aB-UFw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLH-5d-8YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="243" y="902"/>
         </scene>
     </scenes>
 </document>

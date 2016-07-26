@@ -14,6 +14,8 @@
 		181F36421D4591C700DA5174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181F36401D4591C700DA5174 /* LaunchScreen.storyboard */; };
 		181F364D1D4591C700DA5174 /* Pedometer_Alarm_ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F364C1D4591C700DA5174 /* Pedometer_Alarm_ClockTests.swift */; };
 		181F36581D4591C700DA5174 /* Pedometer_Alarm_ClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F36571D4591C700DA5174 /* Pedometer_Alarm_ClockUITests.swift */; };
+		181F36661D46E1F300DA5174 /* AlarmCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F36651D46E1F300DA5174 /* AlarmCreationViewController.swift */; };
+		181F36681D46E48F00DA5174 /* AlarmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F36671D46E48F00DA5174 /* AlarmObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		181F36531D4591C700DA5174 /* Pedometer_Alarm_ClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Pedometer_Alarm_ClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		181F36571D4591C700DA5174 /* Pedometer_Alarm_ClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedometer_Alarm_ClockUITests.swift; sourceTree = "<group>"; };
 		181F36591D4591C700DA5174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181F36651D46E1F300DA5174 /* AlarmCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCreationViewController.swift; sourceTree = "<group>"; };
+		181F36671D46E48F00DA5174 /* AlarmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				181F363E1D4591C700DA5174 /* Assets.xcassets */,
 				181F36401D4591C700DA5174 /* LaunchScreen.storyboard */,
 				181F36431D4591C700DA5174 /* Info.plist */,
+				181F36651D46E1F300DA5174 /* AlarmCreationViewController.swift */,
+				181F36671D46E48F00DA5174 /* AlarmObject.swift */,
 			);
 			path = Pedometer_Alarm_Clock;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181F36681D46E48F00DA5174 /* AlarmObject.swift in Sources */,
 				181F363A1D4591C700DA5174 /* ViewController.swift in Sources */,
+				181F36661D46E1F300DA5174 /* AlarmCreationViewController.swift in Sources */,
 				181F36381D4591C700DA5174 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +499,7 @@
 				181F365E1D4591C700DA5174 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		181F365F1D4591C700DA5174 /* Build configuration list for PBXNativeTarget "Pedometer_Alarm_ClockTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +508,7 @@
 				181F36611D4591C700DA5174 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		181F36621D4591C700DA5174 /* Build configuration list for PBXNativeTarget "Pedometer_Alarm_ClockUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +517,7 @@
 				181F36641D4591C700DA5174 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
