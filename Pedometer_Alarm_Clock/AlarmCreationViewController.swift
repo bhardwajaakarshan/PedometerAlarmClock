@@ -11,7 +11,6 @@ import UIKit
 
 class AlarmCreationViewController: UIViewController, UIPickerViewDelegate {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,8 +29,8 @@ class AlarmCreationViewController: UIViewController, UIPickerViewDelegate {
         alert.message = "\(selectedValue)"
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
-        AlarmObject.sharedInstance.alarms.append(selectedValue)
-        print(AlarmObject.sharedInstance.alarms)
+        AlarmObject.alarms.append(selectedValue)
+        print(AlarmObject.alarms)
         //addNewAlarm(selectedValue)
     }
     

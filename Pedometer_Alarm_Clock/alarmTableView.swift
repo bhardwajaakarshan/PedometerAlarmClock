@@ -13,18 +13,21 @@ class alarmTableView: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var table: UITableView!
     
-    var ListArray = AlarmObject.sharedInstance.alarms
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         table.delegate = self
         table.dataSource = self
+        self.table.reloadData()
+        print(AlarmObject.alarms)
     }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int)->Int {
-        print("NUM ELEMENTS: \(ListArray.count)")
-        return ListArray.count
+        //print("NUM ELEMENTS: \(ListArray.count)")
+        return AlarmObject.alarms.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -36,10 +39,10 @@ class alarmTableView: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        //cell.titleLabel.text = "\(ListArray.objectAtIndex(indexPath.item))"
-        print(ListArray[indexPath.row])
-        cell.textLabel!.text! = String(ListArray[indexPath.row])
+        let cell = UITableViewCell()//tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        //cell.textLabel?.text = "\(ListArray[indexPath.item])"
+        print(AlarmObject.alarms[indexPath.row])
+        cell.textLabel?.text = String(AlarmObject.alarms[indexPath.row])
         
         return cell
     }

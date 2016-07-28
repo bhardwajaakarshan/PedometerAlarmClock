@@ -79,7 +79,7 @@ class ViewController: UIViewController {
             })
             sleep(1)
             // since a second thread is created sleep is used to make sure the local value is not dereferenced before the app returns the number of steps.
-            print("\(localdata.numberOfSteps)")
+            //print("\(localdata.numberOfSteps)")
             currSteps = (localdata!.numberOfSteps).integerValue
         } else {
             print("No permission to use health data.")
